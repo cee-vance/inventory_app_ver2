@@ -1,0 +1,8 @@
+{%extends '../productapp_body.html' %}
+
+{% block title %} {{product.name }} Detail {% endblock title %}
+{% block content %}
+<span>{{product.name}} {{product.description}}    {{product.price}} </span>
+<a href="{% url 'productapp:product_update' product.id %}" > Edit </a>
+{% endblock content %}
+

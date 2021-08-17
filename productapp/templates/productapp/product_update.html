@@ -1,0 +1,15 @@
+{% extends '../productapp_body.html' %}
+
+{% block title %}Update Product{% endblock title %}
+
+{% block content %}
+<form method="post" >
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Save</button>
+    </form>
+{% endblock content %}
+
+
+
+

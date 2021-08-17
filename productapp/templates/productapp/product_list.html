@@ -1,0 +1,15 @@
+{%extends '../productapp_body.html' %}
+
+{% block title %} Products List{% endblock title %}
+
+{%block content %}
+{% if prod_lst %}
+    <ul>
+        {% for prod in prod_lst %}
+            <li><a href="{% url 'productapp:product_details' prod.id %}">{{ prod.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p> No Products Right Now</p>
+{% endif %}
+{% endblock content %}
