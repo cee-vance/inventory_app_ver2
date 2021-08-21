@@ -32,11 +32,11 @@ class Product(models.Model):
 
     create_date = models.DateField(default=date.today)
 
-    #category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    product_category = models.ManyToManyField(ProductCategory, blank=True)
 
 
 
-    # toString
+
     def __str__(self):
         return self.name
 
