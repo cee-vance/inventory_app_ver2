@@ -9,7 +9,7 @@ class ProductForm(forms.ModelForm):
 
     class Meta: # data/ info configuration details for the class
         model = Product
-        fields = ('name','description','price','product_category')
+        fields = ('name','description','price','product_category','image')
         
 
 class ProductCategoryForm(forms.ModelForm):

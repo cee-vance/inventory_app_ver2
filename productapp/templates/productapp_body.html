@@ -11,10 +11,19 @@
                 <td colspan="75%"><a href="{% url 'productapp:show_products' %}"> HOME </a></td>
                 <td colspan="25%">
                     {% if user.is_authenticated %}
-                        <p>Hello {{ user.username }} </p>
+                        <p>Hello {{ user.username }} </p
+                        <p><a href="{% url 'logout' %}">Logout</a></p>
                     {% else %}
-                        <p><a href="{% url 'login' %}">Log In</a></p>
+                        <p><a href="{% url 'login' %}">Login</a></p>
                     {% endif %}
+                </td>
+                <td colspan="75%">
+                    <bold>ADD:</bold>
+                    <span><a href="{% url 'productapp:product_create' %}" >Inventory Product</a>
+                        <a href="{% url 'productapp:productcategory_create' %}" >Product Category</a>
+                    </span>
+
+
                 </td>
             </tr>
         </table>

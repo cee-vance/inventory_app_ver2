@@ -26,7 +26,7 @@ class Product(models.Model):
     price = models.IntegerField()
     quantity = models.IntegerField(default=10000)
 
-    #image = models.ImageField(upload_to='images/', blank=True)
+    image = models.ImageField(upload_to='images/', blank=True)
 
     user = models.ForeignKey(User, blank=True, on_delete=models.CASCADE, default=None, null=True)
 
