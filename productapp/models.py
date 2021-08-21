@@ -28,7 +28,7 @@ class Product(models.Model):
 
     #image = models.ImageField(upload_to='images/', blank=True)
 
-    user = models.ForeignKey(User, default=1, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, blank=True, on_delete=models.CASCADE, default=None, null=True)
 
     create_date = models.DateField(default=date.today)
 

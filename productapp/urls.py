@@ -30,7 +30,9 @@ urlpatterns = [
 	re_path(r'^(?P<pk>\d+)/product_delete/', ProductDelete.as_view(), name='product_delete'),
 
 	# create productcategory
-	re_path(r'productcategory_create', ProductCategoryCreate.as_view(), name='productcategory_create')
+	re_path(r'productcategory_create', ProductCategoryCreate.as_view(), name='productcategory_create'),
+
+
 
 	
 ]

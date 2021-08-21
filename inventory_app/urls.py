@@ -27,6 +27,7 @@ urlpatterns = [
     #login
     path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
     url(r'^signup/$', core_views.signup, name='signup'),
-    url(r'^$', core_views.home, name='home')
+    url(r'^$', core_views.home, name='home'),
+    path(r'^logout/', auth_views.LogoutView.as_view(template_name='logout.html'), name='logout')
 
 ]
