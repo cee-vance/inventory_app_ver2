@@ -2,7 +2,9 @@ from django.urls import path, re_path
 
 from productapp.views import  show_products,\
     ProductDetail,product_create,ProductCreate,product_update, product_details, \
-    ProductUpdate, ProductDelete, product_delete, ProductList \
+    ProductUpdate, ProductDelete, product_delete, ProductList, \
+	ProductCategoryCreate
+
 
 app_name = 'productapp'
 
@@ -23,8 +25,12 @@ urlpatterns = [
 
 	#update an existing product
 	#path('<int:id>/product_update', product_update, name='product_update'),
-	re_path(r'^(?P<pk>\d+)/product_update', ProductUpdate.as_view(), name='product_update'),
+	re_path(r'^(?P<pk>\d+)/product_update/', ProductUpdate.as_view(), name='product_update'),
 	#path('<int:id>/product_delete', product_delete, name='product_delete'),
-	re_path(r'^(?P<pk>\d+)/product_delete', ProductDelete.as_view(), name='product_delete')
+	re_path(r'^(?P<pk>\d+)/product_delete/', ProductDelete.as_view(), name='product_delete'),
+
+	# create productcategory
+	re_path(r'productcategory_create', ProductCategoryCreate.as_view(), name='productcategory_create')
+
 	
 ]

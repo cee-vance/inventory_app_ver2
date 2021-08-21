@@ -83,8 +83,8 @@ def product_update(request , id ):
 # CreateView
 class ProductCreate(CreateView):
     model = Product
-    # form_class = BlogForm
-    fields = '__all__'
+    form_class = ProductForm
+
     template_name = 'productapp/product_create.html'  # If not provided, searches for 'blog/blog_form.html'
     success_url = reverse_lazy('productapp:show_products') # reverse map a url -
 
@@ -124,3 +124,12 @@ class ProductList(ListView):
     template_name = 'productapp/product_list.html'
     model = Product    # queryset = Blog.objects.filter(text='ABC')
     context_object_name = 'prod_lst' #'blogs' 'objects_list [{}.{}.{}]
+
+class ProductCategoryCreate(CreateView):
+    model = ProductCategory
+    form = ProductCategoryForm
+    template_name = 'productapp/productcategory_create.html'
+    success_url = reverse_lazy('productapp:show_products')
+    #context_object_name='productcategory_form'
+    fields = ('name','description')
+

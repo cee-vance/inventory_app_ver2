@@ -6,10 +6,10 @@ from datetime import date
 import productapp.models
 
 
-class Category(models.Model):
+class ProductCategory(models.Model):
     name = models.CharField(max_length=20)
     description = models.CharField(max_length = 50)
-    slug = models.SlugField()
+    #slug = models.SlugField()
 
     def __str__(self):
 
@@ -33,6 +33,8 @@ class Product(models.Model):
     create_date = models.DateField(default=date.today)
 
     #category = models.ForeignKey(Category, on_delete=models.CASCADE)
+
+
 
     # toString
     def __str__(self):
