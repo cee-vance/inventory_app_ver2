@@ -3,13 +3,28 @@
 {% block title %} Products List{% endblock title %}
 
 {%block content %}
+<div>
+<div width="50%" >
 {% if prod_lst %}
     <ul>
         {% for prod in prod_lst %}
             <li><a href="{% url 'productapp:product_details' prod.id %}">{{ prod.name }}</a></li>
         {% endfor %}
     </ul>
+    </div>
+    <div width="50%">
+        <ul>
+            {% for c in categories %}
+                <li>
+                    <a href="{{ c.get_absolute_url }}"> {{c.name}}</a>
+                </li>
+            {% endfor %}
+        </ul>
+
+    </div>
+
+    </div>
 {% else %}
     <p> No Products Right Now</p>
 {% endif %}
-{% endblock content %}
+{% endblock content %}}

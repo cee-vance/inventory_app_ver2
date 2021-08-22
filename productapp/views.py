@@ -133,3 +133,18 @@ class ProductCategoryCreate(CreateView):
     #context_object_name='productcategory_form'
     fields = ('name','description')
 
+
+# product_list based on category
+# initially category = none
+def product_list(request, id = None):
+    # get all the categories for the template links
+    categories = ProductCategory.objects.all()
+    products = Product.objects.all()
+    # if this is a request for product_list by category
+    if id:
+        category = get_object_or_404(ProductCategory, pk=int(id))
+        products = Product.objects.filter(product_category=category)
+
+    return render(request, 'productapp/product_list.html', {
+                                                      'categories': categories,
+                                                      'prod_lst': products})

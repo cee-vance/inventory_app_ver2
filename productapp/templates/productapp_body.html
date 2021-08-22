@@ -11,7 +11,7 @@
                 <td colspan="75%"><a href="{% url 'productapp:show_products' %}"> HOME </a></td>
                 <td colspan="25%">
                     {% if user.is_authenticated %}
-                        <p>Hello {{ user.username }} </p
+                        <p>Hello {{ user.username }} </p>
                         <p><a href="{% url 'logout' %}">Logout</a></p>
                     {% else %}
                         <p><a href="{% url 'login' %}">Login</a></p>

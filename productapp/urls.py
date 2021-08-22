@@ -1,6 +1,7 @@
 from django.urls import path, re_path
 
-from productapp.views import  show_products,\
+import productapp.views
+from productapp.views import  product_list,\
     ProductDetail,product_create,ProductCreate,product_update, product_details, \
     ProductUpdate, ProductDelete, product_delete, ProductList, \
 	ProductCategoryCreate
@@ -12,8 +13,9 @@ urlpatterns = [
     	
 	#FUNCTION BASED URLS
 	#list all product names
-	re_path(r'^product_list/$', ProductList.as_view(), name='show_products'),
-
+	#re_path(r'^product_list/$', ProductList.as_view(), name='show_products'),
+    re_path(r'^$', product_list, name='show_products'),
+    re_path(r'^(?P<id>\d+)/$', product_list, name='product_list_by_category'),
     #path('product_list', show_products, name='show_products'),
 	# list one products details
 	# r'^(P<pk>\d\product_details$'
